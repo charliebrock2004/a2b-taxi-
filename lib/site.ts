@@ -8,6 +8,8 @@ export const site = {
   phoneDisplay: "07708 010432",
   phoneHref: "tel:+447708010432",
   phoneE164: "+447708010432",
+  email: "agbrown1@hotmail.co.uk",
+  emailHref: "mailto:agbrown1@hotmail.co.uk",
   url: (
     process.env.NEXT_PUBLIC_SITE_URL ||
     (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "") ||

@@ -24,6 +24,9 @@ export function Footer() {
               <a href={site.phoneHref} className="footer-phone">
                 {site.phoneDisplay}
               </a>
+              <a href={site.emailHref} className="footer-email">
+                {site.email}
+              </a>
             </div>
             <nav aria-label="Services">
               <h2>Services</h2>

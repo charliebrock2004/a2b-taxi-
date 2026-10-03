@@ -15,7 +15,7 @@ npm run build && npm start   # production build
 
 | Path | What it is |
 | --- | --- |
-| `lib/site.ts` | Business facts: phone, areas, testimonials. One place to change them. |
+| `lib/site.ts` | Business facts: phone, email, areas, testimonials. One place to change them. |
 | `lib/services.ts` | All service page copy. Each page is generated from this data. |
 | `app/` | One folder per page. `app/services/[slug]` builds all seven service pages. |
 | `components/` | Header, footer, call button, photo slot, area map, enquiry form. |
@@ -59,7 +59,8 @@ accounts, so they are not included.
 
 1. **Logo and brand files.** The wordmark here is typeset, not the supplied A2B branding.
 2. **Photography.** No photos are included (see `IMAGES.md`). Real fleet photos are best.
-3. **Enquiry email address.** None is published on the current site, so none is published here.
+3. **Enquiry email address.** The public contact address is agbrown1@hotmail.co.uk (set once in `lib/site.ts`).
+   Use the same address for `ENQUIRY_TO_EMAIL` if form submissions should go there.
 4. **Prices.** The current site says trips from Edinburgh or Glasgow "start around £90" (written
    in 2022). Left out. The site says only that a fixed price is quoted.
 5. **Hours.** Not stated anywhere on the current site. Not stated here; no "24/7" claim.

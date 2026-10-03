@@ -75,6 +75,7 @@ ul, ol { padding: 0; list-style: none; }
 .prose { max-width: 40em; }
 .textlink { color: var(--white); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 6px; text-decoration-thickness: 1px; }
 .textlink:hover { text-decoration-color: var(--white); }
+.textlink.email { overflow-wrap: anywhere; }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -308,5 +309,7 @@ body { padding-bottom: calc(71px + env(safe-area-inset-bottom)); }
 .footer li a { display: inline-block; padding: 6px 0; text-decoration: none; color: var(--muted); }
 .footer li a:hover { color: var(--white); }
 .footer-phone { display: inline-block; margin-top: 18px; font-family: var(--display); font-size: 2rem; color: var(--white); text-decoration: none; }
+.footer-email { display: block; width: fit-content; max-width: 100%; margin-top: 6px; color: var(--silver); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 6px; text-decoration-thickness: 1px; overflow-wrap: anywhere; }
+.footer-email:hover { color: var(--white); text-decoration-color: var(--white); }
 .footer-base { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 32px; justify-content: space-between; color: var(--muted); font-size: 0.85rem; }
 .concept { background: var(--ink-2); border-top: 1px solid var(--line); padding: 12px 0; font-size: 0.85rem; color: var(--silver); text-align: center; }

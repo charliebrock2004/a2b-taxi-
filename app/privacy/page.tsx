@@ -35,7 +35,8 @@ export default function Privacy() {
             <h2 className="display d3">Your details</h2>
             <p>
               To ask what details we hold about you, or to have them corrected or deleted, call{" "}
-              <a className="textlink" href={site.phoneHref}>{site.phoneDisplay}</a>.
+              <a className="textlink" href={site.phoneHref}>{site.phoneDisplay}</a> or email{" "}
+              <a className="textlink email" href={site.emailHref}>{site.email}</a>.
             </p>
           </section>
         </div>

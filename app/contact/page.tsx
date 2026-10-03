@@ -1,5 +1,6 @@
 import { AreaMap } from "@/components/AreaMap";
 import { CallButton } from "@/components/CallButton";
+import { MailIcon } from "@/components/icons";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { JsonLd, PageHero, TownList } from "@/components/sections";
 import { enquiryConfig } from "@/lib/enquiry-config";
@@ -8,7 +9,7 @@ import { site } from "@/lib/site";
 
 export const metadata = pageMeta({
   title: "Contact & Book – Call 07708 010432",
-  description: "Book a journey with A2B Private Hire, Crieff. Call 07708 010432 or send a journey request online.",
+  description: "Book a journey with A2B Private Hire, Crieff. Call 07708 010432, email agbrown1@hotmail.co.uk or send a journey request online.",
   path: "/contact",
 });
 
@@ -28,15 +29,24 @@ export default function Contact() {
       <section className="band">
         <div className="wrap split">
           <div>
-            <h2 className="display d2">Book by phone</h2>
+            <h2 className="display d2">Book by phone or email</h2>
             <address style={{ fontStyle: "normal", marginTop: 28 }}>
               <p className="statement">{site.name}</p>
               <p className="lede">Crieff, Perthshire</p>
               <p style={{ marginTop: 20 }}>
                 Telephone: <a className="textlink" href={site.phoneHref}>{site.phoneDisplay}</a>
               </p>
+              <p style={{ marginTop: 8 }}>
+                Email: <a className="textlink email" href={site.emailHref}>{site.email}</a>
+              </p>
             </address>
-            <div className="btns" style={{ marginTop: 32 }}><CallButton label="Call to book" /></div>
+            <div className="btns" style={{ marginTop: 32 }}>
+              <CallButton label="Call to book" />
+              <a href={site.emailHref} className="btn btn-line">
+                <MailIcon />
+                <span>Email us</span>
+              </a>
+            </div>
             <p className="muted" style={{ marginTop: 32, maxWidth: "32em" }}>
               Have your pick-up address, destination, date and time ready. For airport and station journeys, your flight or train number helps
               us meet you at arrivals.

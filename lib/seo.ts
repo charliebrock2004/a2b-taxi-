@@ -20,6 +20,7 @@ export const businessLd = {
   name: site.name,
   url: site.url,
   telephone: site.phoneE164,
+  email: site.email,
   address: { "@type": "PostalAddress", addressLocality: "Crieff", addressRegion: "Perth and Kinross", addressCountry: "GB" },
   areaServed: ["Crieff", ...areas.map((a) => a.name)].map((name) => ({ "@type": "City", name })),
   paymentAccepted: "Credit Card, Debit Card, Contactless",

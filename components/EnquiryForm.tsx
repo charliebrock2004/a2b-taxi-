@@ -97,7 +97,8 @@ export function EnquiryForm({ enabled }: { enabled: boolean }) {
         <div className="notice">
           <strong>Please book by phone for now</strong>
           Online journey requests are not switched on yet, so this form cannot send. Call{" "}
-          <a className="textlink" href={site.phoneHref}>{site.phoneDisplay}</a> and we will arrange your journey.
+          <a className="textlink" href={site.phoneHref}>{site.phoneDisplay}</a> or email{" "}
+          <a className="textlink email" href={site.emailHref}>{site.email}</a> and we will arrange your journey.
         </div>
       )}
       <form className="form" onSubmit={onSubmit} noValidate ref={formRef} aria-describedby="form-foot">
@@ -151,7 +152,8 @@ export function EnquiryForm({ enabled }: { enabled: boolean }) {
           {status === "not_configured"
             ? "Online journey requests are not switched on yet. "
             : "Something went wrong on our side and the request did not reach us. "}
-          Nothing has been booked. Call <a className="textlink" href={site.phoneHref}>{site.phoneDisplay}</a> to arrange your journey.
+          Nothing has been booked. Call <a className="textlink" href={site.phoneHref}>{site.phoneDisplay}</a> or email{" "}
+          <a className="textlink email" href={site.emailHref}>{site.email}</a> to arrange your journey.
         </div>
       )}
     </>
