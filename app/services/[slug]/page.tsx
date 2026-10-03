@@ -2,6 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CallButton } from "@/components/CallButton";
 import { ArrowIcon } from "@/components/icons";
+import { InView } from "@/components/InView";
+import { Inset } from "@/components/Photo";
 import { FinalCta, JsonLd, PageHero } from "@/components/sections";
 import { getService, services } from "@/lib/services";
 import { breadcrumbLd, pageMeta } from "@/lib/seo";
@@ -29,7 +31,8 @@ export default async function ServicePage({ params }: Props) {
       <PageHero
         title={service.headline}
         lede={service.intro}
-        image={service.image}
+        image={`hero-${service.slug}`}
+        photo={service.photo}
         crumbs={[{ href: "/", label: "Home" }, { href: "/services", label: "Our services" }, { label: service.name }]}
       >
         <div className="btns">
@@ -51,6 +54,15 @@ export default async function ServicePage({ params }: Props) {
                 </div>
               </section>
             ))}
+            {service.gallery && (
+              <div className="gallery">
+                {service.gallery.map((g) => (
+                  <InView key={g.name} className="reveal">
+                    <Inset {...g} />
+                  </InView>
+                ))}
+              </div>
+            )}
           </div>
           <aside className="panel stick" aria-labelledby="how">
             <h2 className="display d3" id="how" style={{ marginBottom: 20 }}>How to book</h2>

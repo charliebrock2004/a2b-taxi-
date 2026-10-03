@@ -1,10 +1,16 @@
 // Service copy. Sourced from the existing A2B website; nothing here states a price,
 // a vehicle make, opening hours or a qualification the business has not published itself.
 
+import type { InsetPhoto } from "@/components/Photo";
+
 export type Service = {
   slug: string;
   name: string;
+  /** Photo file in public/images (without extension), shown in the page hero and service lists. */
   image: string;
+  photo?: InsetPhoto;
+  /** Further photographs shown beneath the page copy. */
+  gallery?: InsetPhoto[];
   card: string;
   metaTitle: string;
   metaDescription: string;
@@ -20,7 +26,8 @@ export const services: Service[] = [
   {
     slug: "local-private-hire",
     name: "Local private hire",
-    image: "local",
+    image: "local-scenic-transfers",
+    photo: { name: "local-scenic-transfers", alt: "A quiet road winding through wooded Perthshire countryside" },
     card: "Everyday journeys around Crieff and the surrounding area.",
     metaTitle: "Crieff Taxi & Local Private Hire",
     metaDescription:
@@ -57,7 +64,8 @@ export const services: Service[] = [
   {
     slug: "airport-transfers",
     name: "Airport transfers",
-    image: "airport",
+    image: "airport-transfers-departures",
+    photo: { name: "airport-transfers-departures", alt: "An airport departures board listing Dublin, Glasgow and London" },
     card: "Transfers to and from Scotland's airports, with advance bookings encouraged.",
     metaTitle: "Crieff Airport Transfers to Edinburgh & Glasgow",
     metaDescription:
@@ -126,7 +134,8 @@ export const services: Service[] = [
   {
     slug: "railway-station-transfers",
     name: "Railway station transfers",
-    image: "rail",
+    image: "railway-transfers-gleneagles",
+    photo: { name: "railway-transfers-gleneagles", alt: "A train arriving at Gleneagles railway station", caption: "Gleneagles station" },
     card: "Convenient transfers to railway stations throughout Scotland.",
     metaTitle: "Railway Station Transfers from Crieff",
     metaDescription:
@@ -159,7 +168,8 @@ export const services: Service[] = [
   {
     slug: "wedding-transport",
     name: "Wedding transport",
-    image: "wedding",
+    image: "wedding-transfers",
+    photo: { name: "wedding-transfers", alt: "A bride and groom holding hands beside the wedding bouquet" },
     card: "Reliable transport for weddings and special occasions.",
     metaTitle: "Wedding Transport in Crieff & Perthshire",
     metaDescription:
@@ -192,7 +202,11 @@ export const services: Service[] = [
   {
     slug: "hospital-transfers",
     name: "Hospital transfers",
-    image: "hospital",
+    image: "perth-royal-infirmary",
+    photo: { name: "perth-royal-infirmary", alt: "The main entrance of Perth Royal Infirmary", caption: "Perth Royal Infirmary" },
+    gallery: [
+      { name: "hospital-appointments", alt: "A nurse going through appointment details with an older patient", caption: "Medical appointments" },
+    ],
     card: "Transport to hospital appointments and medical visits.",
     metaTitle: "Hospital & Appointment Transfers from Crieff",
     metaDescription:
@@ -224,7 +238,13 @@ export const services: Service[] = [
   {
     slug: "day-trips-and-events",
     name: "Day trips and events",
-    image: "day-trips",
+    image: "castle-and-heritage-trips",
+    photo: { name: "castle-and-heritage-trips", alt: "A Scottish castle above a harvested field", caption: "Local history" },
+    gallery: [
+      { name: "whisky-tasting-transfers", alt: "Whisky being poured into a tasting glass", caption: "Whisky tastings" },
+      { name: "fine-dining-transfers", alt: "A restaurant table laid with wine glasses", caption: "Fine dining" },
+      { name: "day-at-the-races", alt: "Racehorses and jockeys galloping on a turf course", caption: "A day at the races" },
+    ],
     card: "Personalised transport for days out, special occasions and events.",
     metaTitle: "Day Trips & Event Transport from Crieff",
     metaDescription:

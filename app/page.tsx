@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CallButton } from "@/components/CallButton";
-import { Photo } from "@/components/Photo";
+import { Inset, Photo } from "@/components/Photo";
 import { AreaMap } from "@/components/AreaMap";
 import { InView } from "@/components/InView";
 import { TickIcon } from "@/components/icons";
@@ -26,27 +26,39 @@ export default function Home() {
         <div className="hero-bg">
           <Photo name="hero" alt="" priority />
         </div>
-        <div className="wrap hero-in">
-          <div className="route" aria-hidden="true">
-            <b>A</b>
-            <i />
-            <b>B</b>
+        <div className="wrap hero-in has-inset">
+          <div className="hero-head">
+            <div className="route" aria-hidden="true">
+              <b>A</b>
+              <i />
+              <b>B</b>
+            </div>
+            <h1>
+              <span className="display d1 rise">Your journey.</span>
+              <span className="display d1 rise" style={delay(".12s")}>Our priority.</span>
+              <span className="hero-sub rise" style={delay(".3s")}>
+                Professional private hire &amp; airport transfers in Crieff and across Perthshire.
+              </span>
+            </h1>
           </div>
-          <h1>
-            <span className="display d1 rise">Your journey.</span>
-            <span className="display d1 rise" style={delay(".12s")}>Our priority.</span>
-            <span className="hero-sub rise" style={delay(".3s")}>
-              Professional private hire &amp; airport transfers in Crieff and across Perthshire.
-            </span>
-          </h1>
-          <p className="hero-copy rise" style={delay(".4s")}>
-            Wherever you need to be, A2B Private Hire is here to help. Reliable, comfortable and professional journeys, from local trips to
-            airport transfers and beyond.
-          </p>
-          <div className="btns rise" style={delay(".5s")}>
-            <CallButton label="Call to book" />
-            <Link href="/services" className="btn btn-line">Explore our services</Link>
+          <div className="hero-body">
+            <p className="hero-copy rise" style={delay(".4s")}>
+              Wherever you need to be, A2B Private Hire is here to help. Reliable, comfortable and professional journeys, from local trips to
+              airport transfers and beyond.
+            </p>
+            <div className="btns rise" style={delay(".5s")}>
+              <CallButton label="Call to book" />
+              <Link href="/services" className="btn btn-line">Explore our services</Link>
+            </div>
           </div>
+          <Inset
+            name="a2b-taxi-vehicle"
+            alt="A2B Private Hire's white Skoda saloon parked beside a Perthshire field"
+            caption="The A2B Skoda"
+            width={400}
+            priority
+            className="rise hero-photo"
+          />
         </div>
         <a href="#about" className="scroll" aria-label="Scroll to content" />
       </section>
@@ -99,7 +111,13 @@ export default function Home() {
             <h2 className="display d2">Why choose A2B?</h2>
             <p className="lede" style={{ marginTop: 24 }}>The reasons below are in our customers&rsquo; words as much as ours.</p>
             <InView className="reveal" >
-              <Photo name="why" alt="" className="r-43" sizes="(min-width: 900px) 50vw, 100vw" fallback="none" />
+              <Inset
+                name="a2b-taxi-minibus"
+                alt="A2B Private Hire's minibus parked on open hillside"
+                caption="The A2B minibus"
+                width={560}
+                className="why-photo"
+              />
             </InView>
           </div>
           <div className="why">

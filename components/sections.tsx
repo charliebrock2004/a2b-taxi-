@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { site, testimonials, areas } from "@/lib/site";
 import { services, portTransfers } from "@/lib/services";
-import { Photo, hasPhoto } from "./Photo";
+import { Inset, Photo, type InsetPhoto } from "./Photo";
 import { ArrowIcon, PhoneIcon } from "./icons";
 import { InView } from "./InView";
 
@@ -14,12 +14,10 @@ export function ServiceList() {
     <ul className="svc">
       {items.map((s) => (
         <li key={s.name} className="svc-item">
-          <Link href={s.href}>
-            {hasPhoto(s.image) && (
-              <InView className="reveal svc-photo">
-                <Photo name={s.image} alt="" className="r-169" sizes="(min-width: 800px) 45vw, 100vw" />
-              </InView>
-            )}
+          <Link href={s.href} className="has-photo">
+            <InView className="reveal svc-photo">
+              <Photo name={s.image} alt="" className="r-32" sizes="(min-width: 800px) 132px, 96px" />
+            </InView>
             <h3 className="display d3">{s.name}</h3>
             <span className="go">
               <ArrowIcon />
@@ -78,24 +76,27 @@ export function FinalCta({
 }
 
 export function PageHero({
-  title, lede, image, crumbs, children,
-}: { title: string; lede?: string; image: string; crumbs: { href?: string; label: string }[]; children?: React.ReactNode }) {
+  title, lede, image, photo, crumbs, children,
+}: { title: string; lede?: string; image: string; photo?: InsetPhoto; crumbs: { href?: string; label: string }[]; children?: React.ReactNode }) {
   return (
     <section className="pagehero">
       <div className="hero-bg">
         <Photo name={image} alt="" priority alt2 />
       </div>
-      <div className="wrap pagehero-in">
-        <nav aria-label="Breadcrumb">
-          <ol className="crumbs">
-            {crumbs.map((c) => (
-              <li key={c.label}>{c.href ? <Link href={c.href}>{c.label}</Link> : <span aria-current="page">{c.label}</span>}</li>
-            ))}
-          </ol>
-        </nav>
-        <h1 className="display d2 rise">{title}</h1>
-        {lede && <p className="lede rise" style={{ "--d": ".12s" } as React.CSSProperties}>{lede}</p>}
-        {children}
+      <div className={`wrap pagehero-in ${photo ? "has-inset" : ""}`}>
+        <div>
+          <nav aria-label="Breadcrumb">
+            <ol className="crumbs">
+              {crumbs.map((c) => (
+                <li key={c.label}>{c.href ? <Link href={c.href}>{c.label}</Link> : <span aria-current="page">{c.label}</span>}</li>
+              ))}
+            </ol>
+          </nav>
+          <h1 className="display d2 rise">{title}</h1>
+          {lede && <p className="lede rise" style={{ "--d": ".12s" } as React.CSSProperties}>{lede}</p>}
+          {children}
+        </div>
+        {photo && <Inset {...photo} priority className="rise" />}
       </div>
     </section>
   );

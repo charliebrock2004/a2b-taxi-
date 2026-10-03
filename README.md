@@ -21,7 +21,7 @@ npm run build && npm start   # production build
 | `components/` | Header, footer, call button, photo slot, area map, enquiry form. |
 | `app/globals.css` | The whole design system: colour tokens at the top, then components. |
 | `app/api/enquiry/route.ts` | The enquiry form's server side. The integration point. |
-| `IMAGES.md` | Photo slots: file names, sizes and what each should show. |
+| `IMAGES.md` | Photos in use, where each appears, rights to check, and the empty slots. |
 
 Why it is built this way: the content is data and the pages are templates. Changing the phone
 number or adding a service is a one-file edit, and a fact can't be right on one page and wrong on
@@ -58,7 +58,9 @@ accounts, so they are not included.
 ## Needs confirming with the owner before launch
 
 1. **Logo and brand files.** The wordmark here is typeset, not the supplied A2B branding.
-2. **Photography.** No photos are included (see `IMAGES.md`). Real fleet photos are best.
+2. **Photography.** Twelve photos from the current site are in use (see `IMAGES.md`). The two vehicle
+   photos are A2B's own; the other ten look like stock or third-party images and need a licence check.
+   Most are 300×200 px, so larger originals would let them be shown bigger. One photo is still to come.
 3. **Enquiry email address.** The public contact address is agbrown1@hotmail.co.uk (set once in `lib/site.ts`).
    Use the same address for `ENQUIRY_TO_EMAIL` if form submissions should go there.
 4. **Prices.** The current site says trips from Edinburgh or Glasgow "start around £90" (written
