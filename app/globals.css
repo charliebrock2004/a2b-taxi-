@@ -346,4 +346,7 @@ body { padding-bottom: calc(71px + env(safe-area-inset-bottom)); }
 .footer-email { display: block; width: fit-content; max-width: 100%; margin-top: 6px; color: var(--silver); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 6px; text-decoration-thickness: 1px; overflow-wrap: anywhere; }
 .footer-email:hover { color: var(--white); text-decoration-color: var(--white); }
 .footer-base { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 32px; justify-content: space-between; color: var(--muted); font-size: 0.85rem; }
+.footer-credit { margin: 16px 0 0; font-size: 0.78rem; line-height: 1.45; color: var(--muted); }
+.footer-credit a { color: inherit; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.footer-credit a:hover { color: var(--white); text-decoration-color: var(--white); }
 .concept { background: var(--ink-2); border-top: 1px solid var(--line); padding: 12px 0; font-size: 0.85rem; color: var(--silver); text-align: center; }

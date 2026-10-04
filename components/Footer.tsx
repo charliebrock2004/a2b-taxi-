@@ -58,6 +58,12 @@ export function Footer() {
             </span>
             <span>Drivers approved by the local council</span>
           </div>
+          <p className="footer-credit">
+            Website built by{" "}
+            <a href="https://peakswift-website-psi.vercel.app" target="_blank" rel="noopener noreferrer">
+              PeakSwift Studio
+            </a>
+          </p>
         </div>
       </footer>
       {!site.live && (
